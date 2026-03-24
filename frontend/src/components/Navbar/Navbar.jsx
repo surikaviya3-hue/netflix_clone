@@ -39,13 +39,14 @@ const Navbar = () => {
       <div className="navbar-left">
         <img src={logo} alt="" />
         <ul>
-          <li>Home</li>
-          <li>Tv shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse by languages</li>
-        </ul>
+  <li onClick={() => navigate("/")}>Home</li>
+  <li>Tv shows</li>
+  <li>Movies</li>
+  <li>New & Popular</li>
+  <li>My List</li>
+  <li>Browse by languages</li>
+  <li onClick={() => navigate("/news")}>News</li>
+</ul>
       </div>
 
       <div className="navbar-right">
