@@ -16,15 +16,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    const BASE_URL = "https://netflix-backend-zb13.onrender.com"
     const url =
-      signState === "Sign Up"
-        ? "http://localhost:8080/auth/register"
-        : "http://localhost:8080/auth/login"
-
-    const bodyData =
-      signState === "Sign Up"
-        ? { name, email, password }
-        : { email, password }
+    signState === "Sign Up"
+    ? `${BASE_URL}/auth/register`
+    : `${BASE_URL}/auth/login`
 
     try {
       const response = await fetch(url, {
