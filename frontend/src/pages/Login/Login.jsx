@@ -14,42 +14,54 @@ const Login = () => {
   const [password, setPassword] = useState("")
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+  e.preventDefault();
 
-    const BASE_URL = "https://netflix-backend-zb13.onrender.com"
-    const url =
+  const BASE_URL = "https://netflix-backend-zb13.onrender.com";
+
+  const url =
     signState === "Sign Up"
-    ? `${BASE_URL}/auth/register`
-    : `${BASE_URL}/auth/login`
+      ? `${BASE_URL}/auth/register`
+      : `${BASE_URL}/auth/login`;
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyData),
-      })
-
-      const data = await response.text()
-
-      if (signState === "Sign In") {
-        if (data === "Login Success!") {
-          localStorage.setItem("isLoggedIn", "true")
-          navigate("/")
-        } else {
-          alert(data)
+  const bodyData =
+    signState === "Sign Up"
+      ? {
+          name: name,
+          email: email,
+          password: password,
         }
-      } else {
-        alert(data)
-        setSignState("Sign In")
-      }
+      : {
+          email: email,
+          password: password,
+        };
 
-    } catch (error) {
-      console.error("Error:", error)
-      alert("Something went wrong")
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bodyData),
+    });
+
+    const data = await response.text();
+
+    if (signState === "Sign In") {
+      if (data === "Login Success!") {
+        localStorage.setItem("isLoggedIn", "true");
+        navigate("/");
+      } else {
+        alert(data);
+      }
+    } else {
+      alert(data);
+      setSignState("Sign In");
     }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong");
   }
+};
 
   return (
     <div className='login'>

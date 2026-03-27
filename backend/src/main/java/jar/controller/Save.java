@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jar.dto.AuthReq;
 import jar.model.User;
 import jar.repo.UserRepo;
-@CrossOrigin (origins = "http://localhost:5173")
+@CrossOrigin (origins = "*")
 @RestController
 @RequestMapping("/auth")
 public class Save {
