@@ -17,7 +17,7 @@ This project is a Netflix Clone web application that replicates the core functio
 ## Technologies Used
 - **Frontend:** Vite, HTML, CSS, JavaScript
 - **Backend:** Spring Boot, Java
-- **Database:** MySQL
+- **Database:** Aiven
 - **APIs:** TMDB API
 - **Tools:** Postman (for testing API), Maven (build automation)
 
