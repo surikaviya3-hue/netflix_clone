@@ -15,7 +15,7 @@ const TitleCards = ({ title, category }) => {
  useEffect(() => {
   if (!category) return; 
   fetch(
-    `https://api.themoviedb.org/3/movie/${category}?api_key=864ef5356ee7d7e3c949fe62c7128ffc&language=en-US&page=1`
+    `https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?api_key=864ef5356ee7d7e3c949fe62c7128ffc&language=en-US&page=1`
   )
     .then((res) => res.json())
     .then((data) => {

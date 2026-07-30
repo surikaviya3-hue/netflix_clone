@@ -44,7 +44,6 @@ const Navbar = () => {
   <li>Movies</li>
   <li>New & Popular</li>
   <li>My List</li>
-  <li>Browse by languages</li>
   <li onClick={() => navigate("/news")}>News</li>
 </ul>
       </div>
