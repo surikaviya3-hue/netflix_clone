@@ -5,7 +5,7 @@ This project is a Netflix Clone web application that replicates the core functio
 
 - **Frontend:** Vite (Fast and modern frontend development)
 - **Backend:** Spring Boot (Handles server-side logic and API requests)
-- **Database:** MySQL (Stores user and application data)
+- **Database:** Aiven (Stores user and application data)
 - **API Integration:** TMDB API (Fetches movie and TV show details such as posters, titles, and descriptions)
 
 ## Features
